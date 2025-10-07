@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Today Tasks</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-blue-100 flex justify-center items-center min-h-screen">
+    <main class="w-full max-w-sm bg-white rounded-3xl shadow-md overflow-hidden">
+        <!-- Header -->
+        <div class="bg-blue-200 p-5 flex items-center gap-3">
+            <button onclick="window.location.href='index.html'" class="text-gray-600">
+                ←
+            </button>
+            <h2 class="text-lg font-semibold text-gray-800">Shopping Tasks</h2>
+        </div>
+
+        <!-- Form tambah tugas -->
+        <div class="p-5">
+            <form id="task-form" class="flex gap-2">
+                <input type="text" id="task-input" class="flex-1 border rounded-xl p-2"
+                    placeholder="Tambah tugas baru..." aria-label="Tambah tugas">
+                <button type="submit" class="bg-blue-400 text-white px-4 rounded-xl hover:bg-blue-500">
+                    +
+                </button>
+            </form>
+
+            <!-- Daftar tugas -->
+            <ul id="task-list" class="mt-4 space-y-2"></ul>
+        </div>
+    </main>
+
+    <!-- Script -->
+    <script>
+        const category = 'shopping'; // identitas kategori
+    </script>
+    <script src="./js/tasks.js"></script>
+</body>
+
+</html>

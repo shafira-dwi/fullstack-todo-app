@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settings Page</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="app-container" id="app">
+        <div class="profile-section">
+            <button onclick="window.location.href='index.html'" class="text-gray-600">
+                ←
+            </button>
+            <img src="https://i.pravatar.cc/100" alt="Profile" class="profile-pic" />
+            <h2 class="name">Jon Möller</h2>
+            <p class="location">📍 Stockholm, Sweden</p>
+            <p class="role">Visual Designer</p>
+            <button class="upgrade-btn">Upgrade Now - Go Pro</button>
+        </div>
+
+        <div class="settings-section">
+            <h3>Settings</h3>
+            <ul class="settings-list">
+                <li>
+                    <span>🌙 Dark Mode</span>
+                    <label class="switch">
+                        <input type="checkbox" id="darkToggle" />
+                        <span class="slider"></span>
+                    </label>
+                </li>
+                <li>
+                    <span>🔔 Notifications</span>
+                    <span class="right-text">On</span>
+                </li>
+                <li><span>🔒 Privacy</span> <span class="arrow">›</span></li>
+                <li><span>🛡️ Security</span> <span class="arrow">›</span></li>
+                <li><span>👤 Account</span> <span class="arrow">›</span></li>
+                <li><span>❓ Help</span> <span class="arrow">›</span></li>
+                <li><span>ℹ️ About</span> <span class="arrow">›</span></li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="min-h-screen bg-gradient-to-b from-blue-900 to-blue-700 flex items-center justify-center p-4">
+
+    <div class="w-full max-w-md bg-white/10 backdrop-blur-lg rounded-2xl shadow-xl p-6 text-white">
+
+        <!-- Header -->
+        <div class="flex items-center justify-between mb-6">
+            <button onclick="window.location.href='index.html'" class="text-white-600">
+                ←
+            </button>
+            <h1 class="text-xl font-semibold">Edit Profile</h1>
+            <div class="w-6"></div>
+        </div>
+
+        <!-- Avatar -->
+        <div class="flex justify-center mb-6 relative">
+            <div class="relative">
+                <img src="https://via.placeholder.com/120" alt="Profile"
+                    class="w-28 h-28 rounded-full border-4 border-white shadow-lg object-cover">
+                <label
+                    class="absolute bottom-0 right-0 bg-blue-500 p-2 rounded-full cursor-pointer shadow-lg hover:bg-blue-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                        stroke="white" class="w-4 h-4">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 20h9" />
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z" />
+                    </svg>
+                    <input type="file" class="hidden" accept="image/*">
+                </label>
+            </div>
+        </div>
+
+        <!-- Form -->
+        <form class="space-y-4">
+            <!-- Name -->
+            <div>
+                <label class="block text-sm text-gray-200 mb-1">Name</label>
+                <input type="text" placeholder="Melissa Peters"
+                    class="w-full px-4 py-2 rounded-lg bg-white/20 text-white placeholder-gray-300 outline-none focus:ring-2 focus:ring-blue-400">
+            </div>
+
+            <!-- Email -->
+            <div>
+                <label class="block text-sm text-gray-200 mb-1">Email</label>
+                <input type="email" placeholder="melpeters@gmail.com"
+                    class="w-full px-4 py-2 rounded-lg bg-white/20 text-white placeholder-gray-300 outline-none focus:ring-2 focus:ring-blue-400">
+            </div>
+
+            <!-- Password -->
+            <div>
+                <label class="block text-sm text-gray-200 mb-1">Password</label>
+                <input type="password" value="********"
+                    class="w-full px-4 py-2 rounded-lg bg-white/20 text-white placeholder-gray-300 outline-none focus:ring-2 focus:ring-blue-400">
+            </div>
+
+            <!-- Date of Birth -->
+            <div>
+                <label class="block text-sm text-gray-200 mb-1">Date of Birth</label>
+                <input type="date" value="1995-05-23"
+                    class="w-full px-4 py-2 rounded-lg bg-white/20 text-white outline-none focus:ring-2 focus:ring-blue-400">
+            </div>
+
+            <!-- Country -->
+            <div>
+                <label class="block text-sm text-gray-200 mb-1">Country/Region</label>
+                <select
+                    class="w-full px-4 py-2 rounded-lg bg-white/20 text-white outline-none focus:ring-2 focus:ring-blue-400">
+                    <option>Nigeria</option>
+                    <option>Indonesia</option>
+                    <option>USA</option>
+                    <option>Japan</option>
+                </select>
+            </div>
+
+            <!-- Save Button -->
+            <button type="submit"
+                class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg mt-4 font-semibold">
+                Save changes
+            </button>
+        </form>
+    </div>
+
+</body>
+
+</html>
