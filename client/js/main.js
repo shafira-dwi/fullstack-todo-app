@@ -13,6 +13,62 @@ const submitBtn = form.querySelector('button[type="submit"]');
 let todos = [];
 let bc = null; // BroadcastChannel
 
+const API_URL = "http://localhost:5000/api";
+let token = localStorage.getItem('token');
+
+async function register(email, password) {
+  const res = await fetch(`${API_URL}/auth/register`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email, password })
+  });
+  const data = await res.json();
+  if (res.ok) {
+    localStorage.setItem('token', data.token);
+    token = data.token;
+    alert('Register success');
+  } else {
+    alert(data.msg);
+  }
+}
+
+async function login(email, password) {
+  const res = await fetch(`${API_URL}/auth/login`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email, password })
+  });
+  const data = await res.json();
+  if (res.ok) {
+    localStorage.setItem('token', data.token);
+    token = data.token;
+    alert('Login success');
+  } else {
+    alert(data.msg);
+  }
+}
+
+async function getTodos() {
+  const res = await fetch(`${API_URL}/todos`, {
+    headers: { 'Authorization': `Bearer ${token}` }
+  });
+  const data = await res.json();
+  console.log(data);
+}
+
+async function addTodo(title) {
+  const res = await fetch(`${API_URL}/todos`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    },
+    body: JSON.stringify({ title })
+  });
+  const data = await res.json();
+  console.log('Todo added:', data);
+}
+
 function showLoading(on = true, msg = 'Loading...') {
   if (!loadingEl) return;
   loadingEl.style.display = on ? 'block' : 'none';
